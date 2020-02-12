@@ -5,13 +5,12 @@ import { TranslateModule } from '@ngx-translate/core';
 import { FuseSharedModule } from '@fuse/shared.module';
 
 import { SampleComponent } from './sample.component';
-import { AuthenGuardService } from 'app/authentication/authen-guard.service';
+import { ContactModule } from 'app/contact/contact.module';
 
 const routes = [
     {
-        path     : 'app-contact-list',
+        path: 'sample',
         component: SampleComponent
-        // canActivate: [AuthenGuardService]
     }
 ];
 
@@ -19,18 +18,17 @@ const routes = [
     declarations: [
         SampleComponent
     ],
-    imports     : [
+    imports: [
         RouterModule.forChild(routes),
 
         TranslateModule,
-
+        ContactModule,
         FuseSharedModule
     ],
-    exports     : [
+    exports: [
         SampleComponent
     ]
 })
 
-export class SampleModule
-{
+export class SampleModule {
 }
