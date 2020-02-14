@@ -34,7 +34,7 @@ export class SampleComponent {
                 "name": "John",
                 "lastname": "chowrai",
                 "email": "john@email.com",
-                "birthdate": "23/08/2011",
+                "birthdate": "2018-01-24T11:23:00",
                 "tel": "0998698965",
                 "address": "5/46 ต.ปากน้ำ อ.โพธ์ จ.ไทยแลน"
             },
@@ -44,7 +44,7 @@ export class SampleComponent {
                 "name": "jehn",
                 "lastname": "loykoh",
                 "email": "jehn@email.com",
-                "birthdate": "08/02/1998",
+                "birthdate": "2018-01-24T11:23:00",
                 "tel": "0996532698",
                 "address": "103/68 ต.ขนม อ.ลอดช่อง จ.สิงคโปร์"
             }
