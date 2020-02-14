@@ -1,3 +1,12 @@
+mat-icon {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
 .container {
     width: 100%;
 }
@@ -23,4 +32,19 @@
 .comment-box-size {
     width: 100%;
     max-width: 800px;
+}
+
+.btn-selected {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    color: white;
+    background-color: black;
+    border-radius: 50%;
+    -webkit-box-shadow: -1px 3px 5px 0px #969696;
+    -moz-box-shadow: -1px 3px 5px 0px #969696;
+    box-shadow: -1px 3px 5px 0px #969696;
+    cursor: pointer;
 }

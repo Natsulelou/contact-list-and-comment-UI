@@ -1,37 +1,37 @@
 <div class="container">
   <div fxLayout="row wrap">
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': boldSelected}" (click)="onBold()">
         <mat-icon>format_bold</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': italicSelected}" (click)="onItalic()">
         <mat-icon>format_italic</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': underlinedSelected}" (click)="onUnderlined()">
         <mat-icon>format_underlined</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" (click)="openLinkModal()">
         <mat-icon>insert_link</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': bulletedSelected}" (click)="onBulleted()">
         <mat-icon>format_list_bulleted</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': numberedSelected}" (click)="onNumbered()">
         <mat-icon>format_list_numbered</mat-icon>
       </div>
     </div>
     <div fxFlex="5">
-      <div class="btn-edit-text">
+      <div class="btn-edit-text" [ngClass]="{'btn-selected': quoteSelected}" (click)="onQuote()">
         <mat-icon>format_quote</mat-icon>
       </div>
     </div>
