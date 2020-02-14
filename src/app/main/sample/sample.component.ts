@@ -6,21 +6,61 @@ import { locale as english } from './i18n/en';
 import { locale as thai } from './i18n/th';
 
 @Component({
-    selector   : 'sample',
+    selector: 'sample',
     templateUrl: './sample.component.html',
-    styleUrls  : ['./sample.component.scss']
+    styleUrls: ['./sample.component.scss']
 })
-export class SampleComponent
-{
+export class SampleComponent {
     /**
      * Constructor
      *
      * @param {FuseTranslationLoaderService} _fuseTranslationLoaderService
      */
+
+    menuList: any;
+    contactList: any;
     constructor(
         private _fuseTranslationLoaderService: FuseTranslationLoaderService
-    )
-    {
+    ) {
         this._fuseTranslationLoaderService.loadTranslations(english, thai);
     }
+
+    ngOnInit() {
+        this.menuList = ["ทั้งหมด", "รอยืนยัน", "ยืนยันแล้ว"]
+        this.contactList = [
+            {
+                "_id": "001",
+                "title_name": "Mr.",
+                "name": "John",
+                "lastname": "chowrai",
+                "email": "john@email.com",
+                "birthdate": "23/08/2011",
+                "tel": "0998698965",
+                "address": "5/46 ต.ปากน้ำ อ.โพธ์ จ.ไทยแลน"
+            },
+            {
+                "_id": "002",
+                "title_name": "Mrs.",
+                "name": "jehn",
+                "lastname": "loykoh",
+                "email": "jehn@email.com",
+                "birthdate": "08/02/1998",
+                "tel": "0996532698",
+                "address": "103/68 ต.ขนม อ.ลอดช่อง จ.สิงคโปร์"
+            }
+        ]
+    }
+
+    selectedMenu(event) {
+        console.log(event)
+    }
+
+    deleteList(event) {
+        console.log(event)
+    }
+
+    onSaveContactData(event) {
+        console.log(event)
+    }
+
 }

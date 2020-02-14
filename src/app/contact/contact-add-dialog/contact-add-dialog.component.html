@@ -1,0 +1,75 @@
+<div class="keep-right">
+  <img class="close-button" (click)="onCloseClick()" src="https://image.flaticon.com/icons/svg/1828/1828851.svg">
+</div>
+<div>
+  <h2>
+    ข้อมูลผู้ใช้
+  </h2>
+</div>
+
+<form class="form-size">
+  <table class="full-width">
+    <tr fxLayout="row wrap">
+      <td fxFlex="35" fxFlex.gt-xs="20">
+        <mat-form-field class="full-width">
+          <mat-label>Name title</mat-label>
+          <input matInput [(ngModel)]="contactData.title_name" name="title_name">
+        </mat-form-field>
+      </td>
+      <td fxFlex="100" fxFlex.gt-xs="40">
+        <mat-form-field class="full-width">
+          <mat-label>Name</mat-label>
+          <input matInput [(ngModel)]="contactData.name" name="name">
+        </mat-form-field>
+      </td>
+      <td fxFlex="100" fxFlex.gt-xs="40">
+        <mat-form-field class="full-width">
+          <mat-label>Last Name</mat-label>
+          <input matInput [(ngModel)]="contactData.lastname" name="lastname">
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <table class="full-width">
+    <tr fxLayout="row wrap">
+      <td fxFlex="100" fxFlex.gt-xs="45">
+        <mat-form-field class="full-width">
+          <mat-label>E-mail</mat-label>
+          <input matInput placeholder="Ex. Casan@test.com" type="email" [(ngModel)]="contactData.email" name="email">
+        </mat-form-field>
+      </td>
+      <td fxFlex="100" fxFlex.gt-xs="45">
+        <mat-form-field class="full-width">
+          <mat-label>Birthdate</mat-label>
+          <input matInput placeholder="Ex. 08/02/1992" [matDatepicker]="birthdate" [(ngModel)]="contactData.birthdate"
+            name="birthdate">
+          <mat-datepicker-toggle matSuffix [for]="birthdate"></mat-datepicker-toggle>
+          <mat-datepicker #birthdate></mat-datepicker>
+        </mat-form-field>
+      </td>
+    </tr>
+  </table>
+  <p>
+    <mat-form-field>
+      <mat-label>Tel</mat-label>
+      <input matInput [(ngModel)]="contactData.tel" name="tel">
+    </mat-form-field>
+  </p>
+  <p>
+    <mat-form-field class="full-width">
+      <mat-label>Address</mat-label>
+      <textarea matInput placeholder="Ex. 11/11 หมู่บ้านคาซาน ซ.คาซาน ต.คาซาน อ.คาซาน จ.คาซาน 12130"
+        [(ngModel)]="contactData.address" name="address"></textarea>
+    </mat-form-field>
+  </p>
+</form>
+<div class="keep-right">
+  <button mat-raised-button color="primary" (click)="onSaveClick()"
+    [disabled]="contactData.title_name === '' || contactData.name === '' || 
+    contactData.lastname === '' || contactData.email === '' || contactData.birthdate === '' || contactData.tel === '' || contactData.address === ''">Save</button>
+</div>
+
+<!-- btn for check -->
+<div class="keep-right">
+  <button mat-raised-button color="primary" (click)="onSaveClick()">Save</button>
+</div>

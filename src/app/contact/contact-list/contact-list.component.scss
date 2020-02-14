@@ -1,0 +1,75 @@
+mat-list-item:hover {
+    background: lightgray;
+    cursor: pointer;
+}
+
+.row-contain {
+    width: 100vw;
+}
+
+.menu-bar {
+    border-radius: 5%;
+}
+
+.add-button-container {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.add-button {
+    width: 55px;
+}
+
+.add-button-container-small {
+    padding-left: 30px;
+}
+
+.add-button-small {
+    width: 38px;
+}
+
+.menu-padding {
+    padding-left: 30px;
+    padding-right: 30px;
+    margin-top: 20px;
+}
+
+.menu-small {
+    margin-top: 20px;
+}
+
+.list-container {
+    width: 100%;
+    border-radius: 0%;
+}
+
+.list-style {
+    padding: 1px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: default;
+}
+
+.list-padding {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px
+}
+
+.no-datalist {
+    height: 100vh;
+}
+
+.img-size {
+    height: 150px;
+    position: relative;
+    left: calc(50% - 75px);
+    top: 15%;
+}
+
+.curser-icon {
+    cursor: pointer;
+}

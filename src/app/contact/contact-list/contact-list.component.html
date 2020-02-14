@@ -1,3 +1,82 @@
-<p>
-  contact-list works!
-</p>
+<!-- <div fxLayout="column" fxLayout.gt-sm="row wrap">
+  <div fxFlex="50" fxFlex.gt-sm="100" fxLayoutAlign="center">1</div>
+  <div fxFlex="50" fxFlex.gt-sm="30" fxLayoutAlign="center">2</div>
+  <div fxFlex="50" fxFlex.gt-sm="30" fxLayoutAlign="center">3</div>
+  <div fxFlex="100" fxFlex.gt-sm="30" fxLayoutAlign="center">4</div>
+  <div fxFlex="100" fxFlex.gt-sm="100" fxLayoutAlign="center">5</div>
+  <div fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="center">6</div>
+  <div fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="center">7</div>
+  <div fxFlex="100" fxFlex.gt-sm="100" fxLayoutAlign="center">8</div>
+  <div fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="center">9</div>
+  <div fxFlex="100" fxFlex.gt-sm="50" fxLayoutAlign="center">10</div>
+</div> -->
+
+<div class="row-contain">
+  <div fxLayout="row wrap">
+    <div fxHide fxShow.gt-sm fxFlex.gt-sm="20">
+      <div class="add-button-container">
+        <img class="add-button" (click)="openAddList()" src="https://image.flaticon.com/icons/svg/1828/1828817.svg">
+      </div>
+      <div class="menu-padding">
+        <mat-card class="menu-bar">
+          <mat-list>
+            <mat-list-item *ngFor="let item of menuList" (click)="onMenu(item)">{{item}}</mat-list-item>
+          </mat-list>
+        </mat-card>
+      </div>
+    </div>
+    <div fxShow fxHide.gt-sm fxFlex="100">
+      <div class="menu-small">
+        <span class="add-button-container-small">
+          <img class="add-button-small" (click)="openAddList()" src="https://image.flaticon.com/icons/svg/1828/1828817.svg">
+        </span>
+        <button mat-button [matMenuTriggerFor]="menu">
+          <mat-icon>menu</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <button mat-menu-item *ngFor="let item of menuList" (click)="onMenu(item)">{{item}}</button>
+        </mat-menu>
+      </div>
+    </div>
+
+    <div *ngIf="contactList.length !== 0" class="list-padding" fxFlex="100" fxFlex.gt-sm="80">
+      <div *ngFor="let item of contactList; let i = index">
+        <mat-card class="list-container">
+          <div fxLayout="row wrap">
+            <div class="list-style" fxFlex="15" fxFlex.gt-xs="7">
+              {{item.title_name}}
+            </div>
+            <div class="list-style" fxFlex="25" fxFlex.gt-xs="10">
+              {{item.name}}
+            </div>
+            <div class="list-style" fxFlex="40" fxFlex.gt-xs="15">
+              {{item.lastname}}
+            </div>
+            <div class="list-style" fxHide fxShow.gt-xs fxFlex.gt-xs="15">
+              {{item.email}}
+            </div>
+            <div class="list-style" fxHide fxShow.gt-xs fxFlex.gt-xs="10">
+              {{item.birthdate}}
+            </div>
+            <div class="list-style" fxHide fxShow.gt-xs fxFlex.gt-xs="11">
+              {{item.tel}}
+            </div>
+            <div class="list-style" fxHide fxShow.gt-xs fxFlex.gt-xs="22">
+              {{item.address}}
+            </div>
+            <div class="list-style" fxFlex="10" fxFlex.gt-xs="5" fxLayoutAlign="end">
+              <mat-icon class="curser-icon" (click)="openAddList(i)">edit</mat-icon>
+            </div>
+            <div class="list-style" fxFlex="10" fxFlex.gt-xs="5" fxLayoutAlign="end">
+              <mat-icon class="curser-icon" (click)="onDelete(i)">delete</mat-icon>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+    </div>
+
+    <div *ngIf="contactList.length === 0" class="no-datalist" fxFlex="100" fxFlex.gt-sm="80">
+      <img class="img-size" src="https://res.cloudinary.com/dyiuidzsc/image/upload/v1581581355/no-data-icon-68.png" alt="Image No data">
+    </div>
+  </div>
+</div>
