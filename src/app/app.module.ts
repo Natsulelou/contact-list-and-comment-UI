@@ -17,24 +17,31 @@ import { fuseConfig } from 'app/fuse-config';
 import { AppComponent } from 'app/app.component';
 import { LayoutModule } from 'app/layout/layout.module';
 import { SampleModule } from 'app/main/sample/sample.module';
+import { CommentComponent } from './comment/comment.component';
+import { RichTextModule } from './rich-text/rich-text.module';
 
 
 const appRoutes: Routes = [
     {
-        path        : 'auth',
+        path: 'auth',
         loadChildren: './authentication/authentication.module#AuthenticationModule'
     },
     {
-        path      : '**',
+        path: 'comment',
+        component: CommentComponent
+    },
+    {
+        path: '**',
         redirectTo: 'sample'
     }
 ];
 
 @NgModule({
     declarations: [
-        AppComponent
+        AppComponent,
+        CommentComponent
     ],
-    imports     : [
+    imports: [
         BrowserModule,
         BrowserAnimationsModule,
         HttpClientModule,
@@ -58,12 +65,12 @@ const appRoutes: Routes = [
 
         // App modules
         LayoutModule,
-        SampleModule
+        SampleModule,
+        RichTextModule
     ],
-    bootstrap   : [
+    bootstrap: [
         AppComponent
     ]
 })
-export class AppModule
-{
+export class AppModule {
 }
